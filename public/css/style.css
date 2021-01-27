@@ -1,0 +1,114 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #130f0d;
+    color: whitesmoke;
+}
+
+.workspace {
+    list-style: none;
+    display: flex;
+    margin-top: 32px;
+}
+
+    .board {
+        background-color: #141316;
+        border: 1px solid #FD951f11;
+        border-radius: 5px;
+        margin: 0 16px;
+    }
+
+        h3 {
+            padding: 16px;
+            color: #FD951Fcc;
+        }
+
+        .board button{
+            float: right;
+            text-align: center;
+            margin-top: -43px;
+            font-size: 25px;
+            padding-right: 37px;
+            outline: 0 none;
+            border: 0 none;
+            cursor: pointer;
+        }
+
+         button img{
+            float: right;
+            text-align: center;
+            font-size: 25px;
+            outline: 0 none;
+            border: 0 none;
+            cursor: pointer;
+            position: absolute;
+        }
+
+        .dropzone {
+            padding: 16px;
+            min-width: 282px;
+            min-height: 200px;
+            transition: 0.5s;
+        }
+
+        .highlight{
+            background-color: #FD952f08;
+        }
+
+            .card{
+                padding: 16px;
+                box-shadow: 0 2px 2px -1px #FD951Fcc;
+                border-radius: 4px;
+                width: 250px;
+                margin: 25px 0px;
+                font-size: 18px;
+                background-color: #1a1a1c;
+                transition: 0.5s;
+            }
+
+
+            .over {
+                background-color: #4cd13711;
+            }
+
+            .ghost-card {
+                cursor: move;
+                opacity: 0.4;
+                transform:  rotate(5deg);
+
+            }
+
+                #status-to-do > .card > :nth-child(0n+1){
+                    background-color: aqua;
+                }
+                #status-doing  > .card > :nth-child(0n+1){
+                    background-color: blue;
+                }
+                #status-done  > .card > :nth-child(0n+1){
+                    background-color: red;
+                }
+
+                .status {
+                    width: 30px;
+                    height: 8px;
+                    background-color: gray;
+                    margin-bottom: 16px;
+                    border-radius: 8px;
+                }
+
+                .content input {
+                    outline: 0 none;
+                    border: none;
+                    font-family: 'Poppins', sans-serif;
+                    background-color: #1a1a1c;
+                    color: aliceblue;
+                    font-size: 18px;
+                }

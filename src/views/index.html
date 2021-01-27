@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <title>Kanban Board</title>
+</head>
+<body>
+    <ul class="workspace">
+        <li class="board">
+            <h3>To Do</h3>
+            <button class="btn-add-card" onclick="creatCard();">
+                <img src="../../public/images/plus.svg" alt="Adicionar Tarefa">
+            </button>
+            <div class="dropzone" class="container" id="status-to-do">
+                <div class="card"  draggable="true">
+                    <div class="status" ></div>
+                    <div class="content"><input type="text" placeholder="Digite aqui"></div>
+                </div>
+                <div class="card"  draggable="true">
+                    <div class="status" ></div>
+                    <div class="content"><input type="text" placeholder="Digite aqui"></div>
+                </div>
+            </div>
+        </li>
+        <li class="board">
+            <h3>Doing</h3>
+            <div class="dropzone" id="status-doing">
+                <div class="card" draggable="true">
+                    <div class="status" >
+                    </div>
+                    <div class="content"><input type="text" placeholder="Digite aqui"></div>
+                </div>
+                <div class="card"  draggable="true">
+                    <div class="status" ></div>
+                    <div class="content"><input type="text" placeholder="Digite aqui"></div>
+                </div>
+            </div>
+        </li>
+        <li class="board">
+            <h3>Done</h3>
+            <button>
+                <img src="../../public/images/minus.svg" alt="Remover tarefas">
+            </button>
+            <div class="dropzone" id="status-done">
+                <div class="card" draggable="true">
+                    <div class="status" >
+                    </div>
+                    <div class="content"><input type="text" placeholder="Digite aqui"></div>
+                </div>
+                <div class="card"  draggable="true">
+                    <div class="status" ></div>
+                    <div class="content"><input type="text" placeholder="Digite aqui"></div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    
+
+    <script src="../../public/js/main.js"  defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.10.2/Sortable.min.js" integrity="sha512-ELgdXEUQM5x+vB2mycmnSCsiDZWQYXKwlzh9+p+Hff4f5LA+uf0w2pOp3j7UAuSAajxfEzmYZNOOLQuiotrt9Q==" crossorigin="anonymous"></script>
+</body>
+</html>
