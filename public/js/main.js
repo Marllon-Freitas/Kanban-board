@@ -3,7 +3,6 @@ const cards = document.querySelectorAll('.card');
 //seleciona todas as 'dropzones'do HTML
 const dropzones = document.querySelectorAll('.dropzone');
 
-/*
 //seleciona os botões para adicionar uma nova tarefa
 const addCard = document.querySelectorAll('.btn-add-card'); 
 
@@ -27,32 +26,51 @@ function creatCard() {
 
     dropzoneCreate.appendChild(newcard);
 }
-*/
+
+// Início: Registo de event listeners utilizando event delegation pattern
+document.querySelector('.workspace').addEventListener(
+  'dragstart',
+  (event) => {
+    if (event.target.classList.contains('card')) startDragging(event.target);
+  },
+);
+
+document.querySelector('.workspace').addEventListener(
+  'drag',
+  (event) => {
+    if (event.target.classList.contains('card')) dragging(event.target);
+  },
+);
+
+document.querySelector('.workspace').addEventListener(
+  'dragend',
+  (event) => {
+    if (event.target.classList.contains('card')) endDragging(event.target);
+  },
+);
+// Fim: Registo de event listeners utilizando event delegation pattern
+
 
 //para cada 'card' ele vai pegar os eventos
-cards.forEach(card => {
-    card.addEventListener('dragstart', startDragging); //começa a arrastar
-    card.addEventListener('drag', dragging); //arrasta
-    card.addEventListener('dragend', endDragging); //para de arrastar
-});
-
-function startDragging() {
+function startDragging(card) {
     dropzones.forEach(dropzone => {
-        dropzone.classList.add('highlight');
+      dropzone.classList.add('highlight');
     });
-
-    this.classList.add('ghost-card');
-}
-
-function dragging() {}
-
-function endDragging() {
+  
+    card.classList.add('ghost-card');
+  }
+  
+  function dragging(card) {}
+  
+  function endDragging(card) {
     dropzones.forEach(dropzone => {
-        dropzone.classList.remove('highlight');
+      dropzone.classList.remove('highlight');
     });
+  
+    card.classList.remove('ghost-card');
+  }
+  
 
-    this.classList.remove('ghost-card');
-}
 
 //local onde serão soltados os cards
 dropzones.forEach(dropzone => {
