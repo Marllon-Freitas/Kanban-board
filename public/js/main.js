@@ -7,10 +7,16 @@ const dropzones = document.querySelectorAll('.dropzone');
 const addCard = document.querySelectorAll('.btn-add-card'); 
 
 //adiciona um novo card dentro de dropzone
-const dropzoneCreate = document.getElementById('status-to-do')
+const dropzoneCreate = document.getElementById('status-to-do');
 
+//função que remove todas as tarefas concluidas
+function removeCard () {
+    //seleciona os botões para remover uma tarefa
+    let removeCard = document.getElementById('status-done'); 
+    removeCard.innerHTML = " ";
+}
 
-//função que uma nova div, onde a nova tarefa será colocada
+//função que cria uma nova div, onde a nova tarefa será colocada
 function criaDiv () {
     let newcard = document.createElement('div');
     return newcard;
@@ -51,7 +57,6 @@ document.querySelector('.workspace').addEventListener(
 // Fim: Registo de event listeners utilizando event delegation pattern
 
 
-//para cada 'card' ele vai pegar os eventos
 function startDragging(card) {
     dropzones.forEach(dropzone => {
       dropzone.classList.add('highlight');
