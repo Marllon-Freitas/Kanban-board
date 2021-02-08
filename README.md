@@ -13,3 +13,9 @@ when the card is being held the background color of all fields changes, while th
 #### Add your own task via the text field.
 
 ![gif mostrando o funcionamento do projeto](https://j.gifs.com/r8PYPw.gif)
+
+### some new updates
+
+you can now create new tasks by clicking the plus (+) button and also remove tasks that have already been completed by clicking the minus (-) button.
+
+![gif com algvmas novas atvalizações](https://j.gifs.com/GvLBAr.gif)
