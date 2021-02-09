@@ -14,6 +14,7 @@ function removeCard () {
     //seleciona os botões para remover uma tarefa
     let removeCard = document.getElementById('status-done'); 
     removeCard.innerHTML = " ";
+    //salvarTarefas();
 }
 
 //função que cria uma nova div, onde a nova tarefa será colocada
@@ -22,7 +23,7 @@ function criaDiv () {
     return newcard;
 }
 
-//função que adiciona um novo'card', uma nova tarefa
+//função que adiciona um novo cartão, uma nova tarefa
 function creatCard() {
     let newcard = criaDiv();
     newcard.innerHTML = `<div class="card" draggable="true">
@@ -31,9 +32,10 @@ function creatCard() {
                         </div>`;
 
     dropzoneCreate.appendChild(newcard);
+    //salvarTarefas();
 }
 
-// Início: Registo de event listeners utilizando event delegation pattern
+//Registo de event listeners utilizando event delegation pattern
 document.querySelector('.workspace').addEventListener(
   'dragstart',
   (event) => {
@@ -54,7 +56,7 @@ document.querySelector('.workspace').addEventListener(
     if (event.target.classList.contains('card')) endDragging(event.target);
   },
 );
-// Fim: Registo de event listeners utilizando event delegation pattern
+//Registo de event listeners utilizando event delegation pattern
 
 
 function startDragging(card) {
@@ -77,7 +79,7 @@ function startDragging(card) {
   
 
 
-//local onde serão soltados os cards
+//local onde serão soltados os cartões
 dropzones.forEach(dropzone => {
     dropzone.addEventListener('dragenter', dragEnter); //entra no zona seleceionada(dropzone)
     dropzone.addEventListener('dragover', dragOver); //fica sobre a 'dropzone'
@@ -103,3 +105,31 @@ function dragLeave() {
 function drop() {
     this.classList.remove('over');
 }
+
+//salva os cartões no local storage
+/*
+function salvarTarefas () {
+  const saveCards = document.querySelectorAll('.card');
+  const cardList = [];
+
+  for(let card of saveCards) {
+    let cardContent = card.innerHTML;
+    cardContent = cardContent.trim();
+    cardList.push(cardContent);
+  }
+  const cardJSON = JSON.stringify(cardList);
+  
+  localStorage.setItem('card', cardJSON);
+}
+
+function adicionaCartoesSalvos () {
+  const cards = localStorage.getItem('card');
+  const cardList = JSON.parse(cards);
+  
+  for(let card of cardList) {
+    creatCard(card);
+  }
+}
+
+adicionaCartoesSalvos();
+*/
