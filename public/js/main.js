@@ -14,7 +14,7 @@ function removeCard () {
     //seleciona os botões para remover uma tarefa
     let removeCard = document.getElementById('status-done'); 
     removeCard.innerHTML = " ";
-    //salvarTarefas();
+    salvarTarefas();
 }
 
 //função que cria uma nova div, onde a nova tarefa será colocada
@@ -32,7 +32,7 @@ function creatCard() {
                         </div>`;
 
     dropzoneCreate.appendChild(newcard);
-    //salvarTarefas();
+    salvarTarefas();
 }
 
 //Registo de event listeners utilizando event delegation pattern
@@ -107,7 +107,7 @@ function drop() {
 }
 
 //salva os cartões no local storage
-/*
+
 function salvarTarefas () {
   const saveCards = document.querySelectorAll('.card');
   const cardList = [];
@@ -132,4 +132,3 @@ function adicionaCartoesSalvos () {
 }
 
 adicionaCartoesSalvos();
-*/
